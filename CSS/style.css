@@ -1,0 +1,339 @@
+html {
+  font-size: 100%;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 1400px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*
+h4 {
+  text-align: center;
+  padding-right: 50px;
+  letter-spacing: 0.5px;
+  font-family: Georgia;
+  font-size: 25px;
+  position: relative;
+  right: 60px;
+  top: 190px;
+}
+*/
+/*
+
+#zero {
+  text-align: center;
+  padding-left: 600px;
+  position: relative;
+  left: 300px;
+  bottom: 20px;
+}
+*/
+
+/*
+
+#one {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: Georgia;
+  font-size: medium;
+  position: relative;
+  right: 85px;
+}
+
+*/
+
+/*
+#two {
+  text-align: left; 
+  font-family: Georgia;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  position: relative;
+  right: 400px;
+  width: fit-content;
+  padding-inline-start: 50%;
+}
+
+*/
+
+#three {
+  font-family: serif;
+  letter-spacing: 1px;
+  padding-left: 1120px;
+  padding-top: 100px;
+}
+
+/* Here we are going to style nav bar */
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap; /* We eventually need to wrap our logo in unorderlist */
+  justify-content: center; /* This centers our content to the middle */
+  align-items: center; /* Align items centers the content vertically */
+  line-height: 1rem; /* we set a default line height 1.5rem for the document */
+  overflow: hidden; /* we will put overflow hidden for the header nav. so, we can have scaling css transitions for hover states our links 
+                        This will keep the web page from jumping around as the hover states are triggered.*/
+  margin-bottom: 0.5rem; /* we add some margin to the bottom of the header nav to push the image down just a bit */
+  background-color: wheat;
+}
+
+.logo,
+.nav-menu {
+  /* remeber we can style two selectors at the same time by seperating them with a comma this cuts down 
+                    on the amount of code we have to write */
+  text-transform: uppercase; /* Now, I've transformed the text of our navigation elements to all caps to give it more of a stylistic flair. */
+}
+
+/* Now, we are styling the unordered list */
+
+.nav-menu {
+  list-style: none; /* let's remove the bullet points by removing any list styling */
+  display: flex; /* we also want it to display flex and now you can see since we had flex wrap on our previos element now everything wraps */
+  flex-wrap: wrap; /* Need to have flex wrap to wrap here */
+  justify-content: space-evenly; /* we justify the content space evenly. so, we have even spacing of our links */
+  align-items: center; /* flex basis to them and display them as a block for the flexbox to work. we vertically align */
+  padding: 0; /* unordered lists have padding by default on the left that's why this isn't centered.
+                once, I remove that default padding the unordered list will be centered */
+  margin: 0; /* we can remove any default margins as well because we will be adding individual padding */
+}
+
+/* next we are going to styling the list itmes these are the li's inside the unorderd list nav menu */
+
+.nav-item {
+  flex: 1 0 50%; /* flex property, we are going to have a flex grow of 1, flex shrink of 0, and a basis of 10% */
+  text-align: center; /* now, we are going to style the links in logo and in nav menu */
+}
+
+/* now, we are going to style the links in logo and in nav menu remember to style a link you type it's class name then a space then 'a' for link */
+
+.logo a,
+.nav-menu a {
+  display: block; /* links are inline elemnts by default. so, we need to set them to display block. */
+  text-decoration: none; /* we remove teh default under line */
+  letter-spacing: 0.2rem; /* it's for to five space between the letters */
+  padding: 0.8rem; /* This will add spacing between all of these menu items */
+}
+
+/* now, let's style the logo this is the entire h1 that holds the logo */
+
+.logo {
+  margin: 0 auto; /* this will keep our logo automatically center */
+}
+
+/* we have pleny more space to show our actual content */
+
+.logo a {
+  color: purple;
+}
+
+.nav-menu a {
+  color: purple;
+  transition: all ease-in-out 0.5s; /* with this declaration transition you can say all properties ease them in and out */
+}
+
+/* now, I am going to style what happens when I hover the nav links with my cursor. */
+
+.nav-menu a:hover {
+  background-color: whitesmoke; /* This will change the background color of the links */
+  transform: scale(
+    1.1
+  ); /* we can add some scale change to them when we hover */
+}
+
+/* we can give a clicking sensation by styling the active state to go down a little bit using animation principles */
+
+.nav-menu a:active {
+  transform: scale(0.9);
+}
+
+img.image {
+  margin-top: -77px;
+}
+
+/* let's add some media queries. so, this work on different devices.
+   The first media query we will add is for tablets to add a media queries. we type @media */
+
+@media (min-width: 600px) {
+  /* everything below 600px will gave the styles above us. so, that's the mobile first */
+  .header-nav,
+  .header-nav1 {
+    line-height: 1.5rem; /* we will increase the line height. */
+  }
+}
+
+.nav-menu {
+  width: 50%;
+}
+
+/* we are styling mobile first */
+
+.nav-item {
+  flex: 1 0 10%;
+}
+
+/* Now, we are going to fix our webpage for desktop version */
+
+@media (min-width: 900px) {
+  /* Now, I am targeting anything over 900 pixels */
+  .header-nav,
+  .header-nav1 {
+    justify-content: space-between;
+    padding: 1rem; /* little bit padding on the top and the bottom but not on the left and right */
+    margin: 1rem auto 2rem auto; /* there's a margin above */
+  }
+  .nav-menu {
+    width: auto;
+  }
+  .logo {
+    margin: 0 0 0 0.3rem;
+  }
+}
+
+@media (min-device-width: 320px) {
+  .header-nav,
+  .header-nav1 {
+    justify-content: space-between;
+    padding: 1rem; /* little bit padding on the top and the bottom but not on the left and right */
+    /*margin: 1rem auto 2rem auto; */ /* there's a margin above */
+  }
+  .nav-menu {
+    width: auto;
+  }
+  .logo {
+    margin: 0 0 0 0.3rem;
+  }
+}
+
+#zero {
+  padding-left: 8%;
+}
+
+#one {
+  text-align: left;
+  font-family: Georgia;
+  font-size: larger;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  padding-inline-start: 25%;
+  padding-right: 10px;
+  padding-inline-end: 20%;
+}
+
+#two {
+  font-family: Georgia;
+  font-size: large;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  padding-inline-start: 25%;
+  padding-right: 10px;
+  padding-inline-end: 20%;
+}
+
+#four {
+  font-family: Georgia;
+  font-size: large;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  padding-inline-start: 25%;
+  padding-right: 10px;
+  padding-inline-end: 20%;
+}
+
+#five {
+  font-family: Georgia;
+  font-size: large;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  padding-inline-start: 25%;
+  padding-right: 10px;
+  padding-inline-end: 20%;
+}
+
+#six {
+  font-family: Georgia;
+  font-size: large;
+  letter-spacing: 1px;
+  text-size-adjust: 10%;
+  padding-inline-start: 25%;
+  padding-right: 10px;
+  padding-inline-end: 20%;
+}
+
+.figure {
+  display: flex;
+  border: 2px dotted gray;
+  margin: 30px; /* adjust as needed */
+}
+figure img {
+  vertical-align: top;
+}
+figure figcaption {
+  text-align: center;
+  font-size: medium;
+  font-style: italic;
+}
+.container {
+  margin-top: 40px;
+}
+a.social:hover{
+  background-color: wheat !important;
+    transform: scale( 1.1 );
+}
+@media only screen and (max-width: 767px) {
+  #three {
+    padding-left: 0px;
+    text-align: center;
+    
+}
+img.image {
+  margin-top: -50px;
+  margin-left: 75px;
+  /* text-align: center; */
+}
+iframe.map {
+  width: 100%;
+}
+}
+
+@media screen and (min-device-width: 820px) and (max-device-width: 1180px) { 
+  img.image {
+    margin-top: 0;
+    margin-left: 0px;
+    /* text-align: center; */
+  }
+  #three {
+    padding-left: 0px;
+    text-align: center;
+    
+}
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) { 
+  img.image {
+    margin-top: 0;
+    margin-left: 0px;
+    /* text-align: center; */
+  }
+  #three {
+    padding-left: 0px;
+    text-align: center;
+    
+}
+}
